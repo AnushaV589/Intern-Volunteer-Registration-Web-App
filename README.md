@@ -1,64 +1,134 @@
-# Registration Management System
+# 🎓 Registration Management System
 
-A full-stack web application for managing internship and volunteer applications.
+A full-stack web application to manage **internship** and **volunteer** applications with a modern frontend and a robust backend.
 
-## Frontend (React)
-- Modern React application with professional design
-- Registration form with validation
-- Admin dashboard for managing applications
-- Responsive design optimized for all devices
+---
 
-## Backend (Spring Boot)
-- RESTful API with comprehensive CRUD operations
-- MySQL database integration
-- Input validation and error handling
-- Cross-origin resource sharing (CORS) support
+## 📁 Project Structure
 
-## Setup Instructions
+registration-management/
+│
+├── backend/ # Spring Boot Application
+│ ├── src/
+│ ├── pom.xml
+│ └── application.properties
+│
+├── frontend/ # React Application
+│ ├── components/
+│ │ ├── AdminDashboard.jsx
+│ │ ├── HomePage.jsx
+│ │ ├── Navigation.jsx
+│ │ └── RegistrationForm.jsx
+│ ├── App.tsx
+│ ├── index.css
+│ ├── main.tsx
+│ ├── vite.config.ts
+│ ├── tsconfig.json
+│ ├── package.json
+│ └── index.html
 
-### Frontend Setup
-1. Install dependencies: `npm install`
-2. Start development server: `npm run dev`
-3. The React app will run on http://localhost:5173
+---
 
-### Backend Setup
-1. Ensure MySQL is running on localhost:3306
-2. Create database: `CREATE DATABASE registration_db;`
-3. Navigate to backend directory: `cd backend`
-4. Run the Spring Boot application: `./mvnw spring-boot:run`
-5. The API will be available at http://localhost:8080
+## 🚀 Features
 
-## API Endpoints
+### 📝 Registration Form
+- Collects applicant details:
+  - First name, last name, email, phone
+  - Type (Internship or Volunteer)
+  - Experience level
+  - Skills, University, Graduation year
+  - Motivation, Availability, Organization
 
-- `POST /api/applicants` - Create new applicant
-- `GET /api/applicants` - Get all applicants
-- `GET /api/applicants/{id}` - Get applicant by ID
-- `GET /api/applicants/search?q={term}` - Search applicants
-- `GET /api/applicants/position/{type}` - Get applicants by position type
-- `PUT /api/applicants/{id}` - Update applicant
-- `DELETE /api/applicants/{id}` - Delete applicant
-- `GET /api/applicants/statistics` - Get application statistics
+### 🛠 Admin Dashboard
+- View, filter, and manage applicants
+- View applicant details and remove entries
+- Displays total applicants, with formatted submission date
 
-## Features
+### 💡 Others
+- Full CRUD operations
+- Frontend form validation
+- Backend validation and error handling
+- Responsive design (desktop/mobile/tablet)
 
-- **Registration Form**: Collects first name, last name, email, phone, position type, and experience level
-- **Admin Dashboard**: View, search, and filter applications
-- **Validation**: Comprehensive input validation on both frontend and backend
-- **Error Handling**: Graceful error handling with user-friendly messages
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+---
 
-## Technologies Used
+## 🧑‍💻 Technologies Used
 
 ### Frontend
 - React 18
+- TypeScript
 - Tailwind CSS
 - Lucide React (icons)
-- Vite (build tool)
+- Vite
 
 ### Backend
 - Spring Boot 3.2
 - Spring Data JPA
-- Spring Web
 - MySQL
 - Lombok
-- Bean Validation
+- Bean Validation (Jakarta)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Backend (Spring Boot)
+
+#### 📌 Prerequisites
+- Java 17+
+- Maven
+- MySQL running on `localhost:3306`
+
+#### 🛠 Steps
+
+# Step into the backend folder
+cd backend
+
+# Create the MySQL database
+mysql -u root -p
+CREATE DATABASE registration_db;
+
+# Run the backend
+./mvnw spring-boot:run
+📍 The backend will be available at: http://localhost:8080
+
+2. Frontend (React + Vite)
+📌 Prerequisites
+Node.js 18+
+
+npm
+
+🛠 Steps
+# Step into the frontend folder
+cd frontend
+
+# Install dependencies
+npm install
+
+# Run the frontend
+npm run dev
+📍 The frontend will be available at: http://localhost:5173
+
+📡 API Endpoints
+Base URL: http://localhost:8080/api/applicants
+Method	Endpoint	Description
+POST	/	Create new applicant
+GET	/	Get all applicants
+GET	/{id}	Get applicant by ID
+GET	/search?q={term}	Search applicants by name or email
+GET	/position/{type}	Filter applicants by position type
+PUT	/{id}	Update applicant
+DELETE	/{id}	Delete applicant
+GET	/statistics	Get total applicant count
+
+📷 Screenshots
+Add relevant screenshots of your dashboard and registration form here.
+
+✨ Credits
+Developed by Vanapalli Anusha
+
+🌐 Portfolio
+
+💼 LinkedIn
+
+📧 anushavanapalli035@gmail.com
